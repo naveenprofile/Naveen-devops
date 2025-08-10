@@ -3,6 +3,7 @@ Configure Git
 Set your username and email, which will be attached to your commits.
 
 #git config --global user.name "naveenprofile"
+
 #git config --global user.email "naveenprofile.fis@gmail.com"
 
 
