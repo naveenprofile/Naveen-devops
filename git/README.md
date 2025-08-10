@@ -1,4 +1,6 @@
-Configure Git: Set your username and email, which will be attached to your commits.
+Configure Git 
+-------------
+Set your username and email, which will be attached to your commits.
 
 #git config --global user.name "naveenprofile"
 #git config --global user.email "naveenprofile.fis@gmail.com"
@@ -27,6 +29,8 @@ Pull Changes: Download the latest changes from the remote repository to your loc
 
 
 Correct the remote URL
+----------------------
+
 Now that you have the correct URL, you can update your local repository's remote.
 
 If the remote named origin already exists but is incorrect, use this command to change it:
