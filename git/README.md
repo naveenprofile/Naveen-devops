@@ -37,3 +37,68 @@ Now that you have the correct URL, you can update your local repository's remote
 If the remote named origin already exists but is incorrect, use this command to change it:
 
 #git remote set-url origin https://github.com/naveenprofile/Naveen-devocd
+
+-----------------------------------
+
+SSH Authentication
+
+1. Generate a new SSH key
+   #ssh-keygen -t
+2. Copy your public key
+   #cat ~/.ssh/id_ed25519.pub
+3. Now:
+       GitHub → Settings
+       SSH and GPG keys
+       New SSH key
+       Paste the key → Add SSH key
+4. Test SSH connection to GitHub
+   #ssh -T git@github.com
+5. Set Git remote URL to SSH
+   #cd /path/to/your/project
+   #git remote -v
+ NOte: If your remote is HTTPS like:   https://github.com/user/repo.git
+   #git remote set-url origin git@github.com:<username>/<repo>.git
+6. Verify:
+       #git remote -v -  You should see:
+        git@github.com:<username>/<repo>.git (fetch)
+        git@github.com:<username>/<repo>.git (push)
+7. Push your code to GitHub
+    git status
+    git add .
+    git commit -m "Initial commit"
+8. push 
+    #git push -u origin main
+    #git push -u origin master
+
+----------------------------------------------------------
+
+HTTPS + Personal Access Token (PAT) ✅ (Most common alternative)
+
+Steps
+A) Create a PAT in GitHub
+
+GitHub → Settings
+Developer settings
+Personal access tokens
+Choose:
+
+Fine-grained token (recommended)
+OR Classic token
+
+
+
+Required permissions (minimum):
+
+repo (for private repos)
+contents: read/write
+
+Copy the token (you won’t see it again).
+
+git remote -v
+
+Push:
+git push origin test
+
+When prompted:
+Username: your-github-username
+Password: <PASTE PAT HERE>
